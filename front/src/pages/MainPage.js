@@ -2,7 +2,7 @@ import DataTable from 'react-data-table-component';
 import {useState} from "react";
 
 
-const MainTable = () => {
+const MainPage = () => {
     const [price, setPrice] = useState('0');
     const [data, setData] = useState('');
 
@@ -77,4 +77,4 @@ const MainTable = () => {
     );
 };
 
-export default MainTable;
+export default MainPage;
