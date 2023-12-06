@@ -1,6 +1,5 @@
 package com.example.coursework.service;
 
-
 import com.example.coursework.database.Result;
 import com.example.coursework.database.ResultRepository;
 import lombok.Getter;
