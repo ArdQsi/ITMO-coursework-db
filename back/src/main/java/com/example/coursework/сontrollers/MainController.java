@@ -18,13 +18,8 @@ public class MainController {
 
     @PostMapping("/main")
     public List<Result> main(@RequestBody PriceRequestDto price) {
-//        Integer price = Integer.parseInt(jsonObject.get("price").toString());
         System.out.println(price);
         List<Result> list = resultService.getResult(price.getPrice());
-        for(Result i: list) {
-            System.out.println(i);
-        }
-
         return list;
     }
 }
