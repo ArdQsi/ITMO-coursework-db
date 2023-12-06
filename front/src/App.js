@@ -1,6 +1,6 @@
 import './App.css';
 import DataTable from 'react-data-table-component';
-import axios from "axios";
+
 
 function App() {
     const newPost = {
