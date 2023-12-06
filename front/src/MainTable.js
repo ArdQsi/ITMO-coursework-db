@@ -92,7 +92,7 @@ const MainTable = () => {
     // //         price: "10"
     // //     }
     // // ]
-    const [post, setPost] = useState({id: 123, rate: 1});
+    const [price, setPrice] = useState(null);
 
     const handleLike = (params) => {
 
@@ -114,7 +114,14 @@ const MainTable = () => {
                 })
     }
     return (
+
         <div>
+            <input
+                type="text"
+                id="price"
+                name="price"
+                value={price}
+            />
             <button onClick={() => handleLike(50000)}>send</button>
         </div>
     );
