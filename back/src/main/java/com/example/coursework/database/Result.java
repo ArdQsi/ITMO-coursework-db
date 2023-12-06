@@ -8,4 +8,5 @@ public record Result(String computercases,
                      String ram_memory,
                      String graphicscards,
                      Integer price) {
+    //тут результаты
 }
