@@ -1,7 +1,9 @@
 package com.example.coursework.service;
 
-import com.example.coursework.DataBase.Result;
-import com.example.coursework.DataBase.ResultRepository;
+
+import com.example.coursework.database.Result;
+import com.example.coursework.database.ResultRepository;
+import lombok.Getter;
 import lombok.RequiredArgsConstructor;
 import org.springframework.stereotype.Service;
 

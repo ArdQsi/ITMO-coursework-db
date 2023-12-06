@@ -1,4 +1,4 @@
-package com.example.coursework.DataBase;
+package com.example.coursework.database;
 
 public record Result(String computercases,
                      String datastorage,

@@ -1,6 +1,10 @@
 package com.example.coursework.сontrollers;
 
+<<<<<<< HEAD
 import com.example.coursework.DataBase.Result;
+=======
+import com.example.coursework.database.Result;
+>>>>>>> 4f2c098e39cdec6eb1f0fc148cc575010e6394a7
 import com.example.coursework.service.ResultService;
 import lombok.RequiredArgsConstructor;
 import org.springframework.web.bind.annotation.GetMapping;

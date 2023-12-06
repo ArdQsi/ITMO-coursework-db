@@ -1,4 +1,4 @@
-package com.example.coursework.DataBase;
+package com.example.coursework.database;
 
 import org.springframework.data.jdbc.repository.query.Query;
 import org.springframework.data.repository.CrudRepository;
