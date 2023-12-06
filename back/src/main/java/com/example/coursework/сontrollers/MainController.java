@@ -1,6 +1,5 @@
 package com.example.coursework.сontrollers;
 
-import com.alibaba.fastjson.JSONObject;
 import com.example.coursework.database.Result;
 import com.example.coursework.dto.PriceRequestDto;
 import com.example.coursework.service.ResultService;
@@ -19,13 +18,8 @@ public class MainController {
 
     @PostMapping("/main")
     public List<Result> main(@RequestBody PriceRequestDto price) {
-//        Integer price = Integer.parseInt(jsonObject.get("price").toString());
         System.out.println(price);
         List<Result> list = resultService.getResult(price.getPrice());
-        for(Result i: list) {
-            System.out.println(i);
-        }
-
         return list;
     }
 }

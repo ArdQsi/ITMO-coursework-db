@@ -1,6 +1,5 @@
 import './App.css';
-import DataTable from 'react-data-table-component';
-import MainTable from "./MainTable";
+import MainTable from "./components/mainContent/MainTable";
 
 
 function App() {
@@ -11,6 +10,7 @@ function App() {
         // </div>
         <div>
             <MainTable />
+
         </div>
     );
 }
