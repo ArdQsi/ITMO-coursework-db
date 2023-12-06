@@ -57,6 +57,7 @@
           <element id="library" level="project" name="Maven: com.github.jsqlparser:jsqlparser:4.6" />
           <element id="library" level="project" name="Maven: org.springframework.data:spring-data-commons:3.2.0" />
           <element id="library" level="project" name="Maven: org.projectlombok:lombok:1.18.30" />
+          <element id="library" level="project" name="Maven: com.alibaba:fastjson:1.2.15" />
         </element>
       </element>
       <element id="directory" name="META-INF">
