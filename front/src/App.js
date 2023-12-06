@@ -4,7 +4,7 @@ import DataTable from 'react-data-table-component';
 
 function App() {
     const newPost = {
-        price: 50000
+        price: 60000
     }
 
     fetch('http://localhost:8080/main', {
