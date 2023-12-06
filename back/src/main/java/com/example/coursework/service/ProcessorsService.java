@@ -17,4 +17,8 @@ public class ProcessorsService {
     public List<Processors> getAll(){
         return processorsRepository.getAll();
     }
+
+    public List<Processors> getByManufacturer(String manufacturer){
+        return  processorsRepository.getByManufacturer(manufacturer);
+    }
 }

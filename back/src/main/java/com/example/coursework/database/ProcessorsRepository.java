@@ -14,5 +14,5 @@ public interface ProcessorsRepository extends CrudRepository<Processors, Integer
     List<Processors> getAll();
 
     @Query("SELECT * FROM Processors where processors.manufacturer = :manufacturer;")
-    List<Processors> getManufacturer(@Param("manufacturer") String manufacturer);
+    List<Processors> getByManufacturer(@Param("manufacturer") String manufacturer);
 }

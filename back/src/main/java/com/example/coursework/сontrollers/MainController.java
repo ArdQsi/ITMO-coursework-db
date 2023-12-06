@@ -18,7 +18,6 @@ public class MainController {
 
     @PostMapping("/main")
     public List<Result> main(@RequestBody PriceRequestDto price) {
-        System.out.println(price);
         List<Result> list = resultService.getResult(price.getPrice());
         return list;
     }

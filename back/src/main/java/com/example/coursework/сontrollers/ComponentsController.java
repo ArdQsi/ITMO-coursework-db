@@ -3,12 +3,11 @@ package com.example.coursework.сontrollers;
 import com.example.coursework.components.*;
 import com.example.coursework.database.ComputerCasesRepository;
 import com.example.coursework.database.Result;
+import com.example.coursework.dto.ManufacturerRequestDto;
+import com.example.coursework.dto.PriceRequestDto;
 import com.example.coursework.service.*;
 import lombok.RequiredArgsConstructor;
-import org.springframework.web.bind.annotation.CrossOrigin;
-import org.springframework.web.bind.annotation.GetMapping;
-import org.springframework.web.bind.annotation.RequestParam;
-import org.springframework.web.bind.annotation.RestController;
+import org.springframework.web.bind.annotation.*;
 
 import java.util.List;
 
@@ -58,6 +57,12 @@ public class ComponentsController {
     @GetMapping("/processors")
     public List<Processors> getProcessors() {
         List<Processors> list = processorsService.getAll();
+        return list;
+    }
+
+    @PostMapping("/processors")
+    public List<Processors> getProcessorsByManufacturer(@RequestBody ManufacturerRequestDto manufacturer) {
+        List<Processors> list = processorsService.getByManufacturer(manufacturer.getManufacturer());
         return list;
     }
 
