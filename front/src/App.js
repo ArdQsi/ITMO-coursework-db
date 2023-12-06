@@ -3,6 +3,8 @@ import {Routes, Route, Link} from 'react-router-dom'
 import MainPage from "./pages/MainPage";
 import ProcessorsPage from "./pages/ProcessorsPage";
 import CasesPage from "./pages/CasesPage";
+import DataStoragePage from "./pages/DataStoragePage";
+
 
 
 function App() {
@@ -21,8 +23,8 @@ function App() {
             </header>
             <Routes>
                 <Route path="/" element={<MainPage />}/>
-                <Route path="/processors" element={<ProcessorsPage />}/>
                 <Route path="/cases" element={<CasesPage />}/>
+                <Route path="/datastorage" element={<DataStoragePage />}/>
             </Routes>
         </>
 
