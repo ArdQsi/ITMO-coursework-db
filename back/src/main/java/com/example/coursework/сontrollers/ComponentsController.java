@@ -14,12 +14,11 @@ import java.util.List;
 
 @RestController
 @RequiredArgsConstructor
-public class MainController {
-
+public class ComponentsController {
     final private ResultService resultService;
 
-    @GetMapping("/main")
-    public List<Result> main(@RequestParam(value = "price", defaultValue = "30000") int price) {
+    @GetMapping("/video-сard")
+    public List<Result> main(@RequestParam(value = "price", defaultValue = "20000") int price) {
         System.out.println(price);
         List<Result> list = resultService.getResult(price);
         return list;
