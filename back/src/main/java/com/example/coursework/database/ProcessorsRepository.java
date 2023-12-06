@@ -12,4 +12,7 @@ import java.util.List;
 public interface ProcessorsRepository extends CrudRepository<Processors, Integer> {
     @Query("SELECT * FROM Processors;")
     List<Processors> getAll();
+
+    @Query("SELECT * FROM Processors where processors.manufacturer = :manufacturer;")
+    List<Processors> getByManufacturer(@Param("manufacturer") String manufacturer);
 }

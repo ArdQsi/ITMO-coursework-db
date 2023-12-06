@@ -8,7 +8,7 @@ import org.springframework.web.bind.annotation.*;
 
 import java.util.List;
 
-@CrossOrigin(origins = "http://localhost:3001")
+@CrossOrigin(origins = "http://localhost:3000")
 
 @RestController
 @RequiredArgsConstructor
@@ -18,7 +18,6 @@ public class MainController {
 
     @PostMapping("/main")
     public List<Result> main(@RequestBody PriceRequestDto price) {
-        System.out.println(price);
         List<Result> list = resultService.getResult(price.getPrice());
         return list;
     }
