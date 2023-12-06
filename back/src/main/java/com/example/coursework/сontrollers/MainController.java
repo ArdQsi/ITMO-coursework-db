@@ -1,6 +1,6 @@
 package com.example.coursework.сontrollers;
 
-import com.example.coursework.database.Result;
+import com.example.coursework.DataBase.Result;
 import com.example.coursework.service.ResultService;
 import lombok.RequiredArgsConstructor;
 import org.springframework.web.bind.annotation.GetMapping;
