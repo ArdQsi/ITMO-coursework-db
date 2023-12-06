@@ -2,6 +2,7 @@ package com.example.coursework.сontrollers;
 
 import com.alibaba.fastjson.JSONObject;
 import com.example.coursework.database.Result;
+import com.example.coursework.dto.PriceRequestDto;
 import com.example.coursework.service.ResultService;
 import lombok.RequiredArgsConstructor;
 import org.springframework.web.bind.annotation.*;
@@ -17,10 +18,10 @@ public class MainController {
     final private ResultService resultService;
 
     @PostMapping("/main")
-    public List<Result> main(@RequestBody JSONObject jsonObject) {
-        Integer price = Integer.parseInt(jsonObject.get("price").toString());
+    public List<Result> main(@RequestBody PriceRequestDto price) {
+//        Integer price = Integer.parseInt(jsonObject.get("price").toString());
         System.out.println(price);
-        List<Result> list = resultService.getResult(price);
+        List<Result> list = resultService.getResult(price.getPrice());
         for(Result i: list) {
             System.out.println(i);
         }
