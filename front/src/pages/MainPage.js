@@ -9,7 +9,8 @@ const MainPage = () => {
     const [data, setData] = useState('');
 
     const handleChange = (event) => {
-        setPrice(event.target.value);
+        if (!isNaN(Number(event.target.value)))
+            setPrice(event.target.value);
     };
 
 
@@ -25,20 +26,11 @@ const MainPage = () => {
                 'Content-type': 'application/json; charset=UTF-8',
             },
         })
+            .then(res => res.ok ? res : Promise.reject(res))
             .then((response) => response.json())
-            // .then(data => {
-            //     const { computercasesid, datastorageid } = data;
-            //     console.log(computercasesid, datastorageid)
-            // })
-
-            // .then((response) => console.log(response))
             .then(response => setData(response))
+            .catch(() => console.log('some error'));
     }
-
-    const idData = [{
-        computercasesid: data.computercasesid,
-        datastorageid: data.datastorageid,
-    }]
 
 
     const columns = [
@@ -86,55 +78,7 @@ const MainPage = () => {
                 graphicscardsid: row.graphicscardsid
             }}>Подробнее</Link>
         }
-
     ]
-
-    // const dt = [
-    //     { id: 1, name: 'Элемент 1' },
-    //     { id: 2, name: 'Элемент 2' },
-    //     { id: 3, name: 'Элемент 3' },
-    // ];
-
-    // const WrappedHome = function(props) {
-    //     // Конструкция "{...props}" нужна, чтобы не потерять
-    //     // параметры, переданные от компонента Route
-    //     return (<Home {...props} user={user} />);
-    // };
-    //
-    // const navigate = useNavigate();
-    // const goNext = () => navigate
-    // return (
-    //     <table>
-    //         <thead>
-    //         <tr>
-    //             <th>ID</th>
-    //             <th>Название</th>
-    //             <th>Действие</th>
-    //         </tr>
-    //         </thead>
-    //         <tbody>
-    //         {dt.map(item => (
-    //             <tr key={item.id}>
-    //                 <td>{item.id}</td>
-    //                 <td>{item.name}</td>
-    //                 <td>
-    //                     <Link to={`/info/${item.id}`}>Подробнее</Link>
-    //
-    //                 </td>
-    //             </tr>
-    //         ))}
-    //         </tbody>
-    //     </table>
-    // <Link to={{
-    //     pathname: "/info",
-    //     dom: "23"
-    // }}>Подробнее</Link>
-    //     <button onCLick={goNext}> go </button>
-    // <Link to="/info" state={{ some: "val"}}>Подробнее</Link>
-    // );
-
-
-
 
     return (
         <div>
@@ -149,10 +93,16 @@ const MainPage = () => {
                 <button onClick={() => handleClick(price)}>send</button>
             </div>
 
-            {data ? <DataTable columns={columns} data={data} fixedHeader pagination>
-            </DataTable> : <h1>Укажите сумму, на которую вы хотите собрать компьютер!</h1>}
-            {/*<Link to={'/info'}>Подробнее</Link>*/}
-            {/*<Link to={'/info'}>Подробнее</ Link>*/}
+            {data ? (
+                <DataTable columns={columns} data={data} fixedHeader pagination />
+            ) : (
+                <>
+                    <h1>Укажите сумму, на которую вы хотите собрать компьютер!</h1>
+                    <div className="container">
+                    <img style={{textAlign: "center"}} src="https://media1.tenor.com/m/vNHwOmIronoAAAAC/sristy-cutie-putie-sristy.gif" alt="GIF" />
+                    </div>
+                </>
+            )}
         </div>
     );
 };
