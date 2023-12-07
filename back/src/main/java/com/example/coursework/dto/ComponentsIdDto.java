@@ -6,11 +6,11 @@ import lombok.Setter;
 @Getter
 @Setter
 public class ComponentsIdDto {
-    private Integer computerCasesId;
-    private Integer dataStorageId;
-    private Integer graphicsCardsId;
-    private Integer motherboardsId;
-    private Integer powerSupplyId;
-    private Integer processorsId;
-    private Integer ramMemoryId;
+    private Integer computercasesid;
+    private Integer datastorageid;
+    private Integer graphicscardsid;
+    private Integer motherboardsid;
+    private Integer powersupplyid;
+    private Integer processorsid;
+    private Integer ram_memoryid;
 }

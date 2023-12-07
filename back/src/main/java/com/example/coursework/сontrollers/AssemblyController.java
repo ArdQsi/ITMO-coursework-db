@@ -25,13 +25,14 @@ public class AssemblyController {
 
     @PostMapping("/assembly")
     public PCAssembly getAssembly(@RequestBody ComponentsIdDto componentsId) {
-        ComputerCases computerCases = computerCasesService.getById(componentsId.getComputerCasesId());
-        DataStorage dataStorage = dataStorageService.getById(componentsId.getDataStorageId());
-        MotherBoards motherBoards = motherBoardsService.getById(componentsId.getMotherboardsId());
-        PowerSupply powerSupply = powerSupplyService.getById(componentsId.getPowerSupplyId());
-        Processors processors = processorsService.getById(componentsId.getProcessorsId());
-        RamMemory ramMemory = ramMemoryService.getById(componentsId.getRamMemoryId());
-        GraphicsCards graphicsCards = graphicsCardsService.getById(componentsId.getGraphicsCardsId());
+        System.out.println(componentsId.toString());
+        ComputerCases computerCases = computerCasesService.getById(componentsId.getComputercasesid());
+        DataStorage dataStorage = dataStorageService.getById(componentsId.getDatastorageid());
+        MotherBoards motherBoards = motherBoardsService.getById(componentsId.getMotherboardsid());
+        PowerSupply powerSupply = powerSupplyService.getById(componentsId.getPowersupplyid());
+        Processors processors = processorsService.getById(componentsId.getProcessorsid());
+        RamMemory ramMemory = ramMemoryService.getById(componentsId.getRam_memoryid());
+        GraphicsCards graphicsCards = graphicsCardsService.getById(componentsId.getGraphicscardsid());
         return new PCAssembly(computerCases, dataStorage, graphicsCards, motherBoards,
                 powerSupply, processors, ramMemory);
     }
