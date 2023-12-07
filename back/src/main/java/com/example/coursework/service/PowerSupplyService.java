@@ -1,5 +1,6 @@
 package com.example.coursework.service;
 
+import com.example.coursework.components.MotherBoards;
 import com.example.coursework.components.PowerSupply;
 import com.example.coursework.components.Processors;
 import com.example.coursework.database.PowerSupplyRepository;
@@ -16,5 +17,9 @@ public class PowerSupplyService {
 
     public List<PowerSupply> getAll(){
         return powerSupplyRepository.getAll();
+    }
+
+    public PowerSupply getById(int id){
+        return  powerSupplyRepository.getById(id);
     }
 }

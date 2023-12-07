@@ -1,5 +1,6 @@
 package com.example.coursework.database;
 
+import com.example.coursework.components.Processors;
 import com.example.coursework.components.RamMemory;
 import org.springframework.data.jdbc.repository.query.Query;
 import org.springframework.data.repository.CrudRepository;
@@ -12,4 +13,7 @@ import java.util.List;
 public interface RamMemoryRepository extends CrudRepository<RamMemory, Integer> {
     @Query("SELECT * FROM RAM_Memory;")
     List<RamMemory> getAll();
+
+    @Query("SELECT * FROM RAM_Memory where id=:id;")
+    RamMemory getById(@Param("id") int id);
 }

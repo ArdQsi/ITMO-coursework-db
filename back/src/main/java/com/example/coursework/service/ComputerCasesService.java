@@ -13,8 +13,10 @@ public class ComputerCasesService {
     private final ComputerCasesRepository computerCasesRepository;
 
     public List<ComputerCases> getAll(){
-        List<ComputerCases> l = computerCasesRepository.getAll();
-        l.forEach(System.out::println);
-        return l;
+        return computerCasesRepository.getAll();
+    }
+
+    public ComputerCases getById(int id){
+        return  computerCasesRepository.getById(id);
     }
 }

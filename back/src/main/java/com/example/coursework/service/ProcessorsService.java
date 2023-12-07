@@ -1,5 +1,6 @@
 package com.example.coursework.service;
 
+import com.example.coursework.components.PowerSupply;
 import com.example.coursework.components.Processors;
 import com.example.coursework.components.RamMemory;
 import com.example.coursework.database.ProcessorsRepository;
@@ -20,5 +21,9 @@ public class ProcessorsService {
 
     public List<Processors> getByManufacturer(String manufacturer){
         return  processorsRepository.getByManufacturer(manufacturer);
+    }
+
+    public Processors getById(int id){
+        return  processorsRepository.getById(id);
     }
 }

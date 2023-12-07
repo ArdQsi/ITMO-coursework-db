@@ -1,5 +1,6 @@
 package com.example.coursework.service;
 
+import com.example.coursework.components.DataStorage;
 import com.example.coursework.components.GraphicsCards;
 import com.example.coursework.components.MotherBoards;
 import com.example.coursework.database.GraphicsCardsRepository;
@@ -16,5 +17,9 @@ public class GraphicsCardsService {
 
     public List<GraphicsCards> getAll(){
         return graphicsCardsRepository.getAll();
+    }
+
+    public GraphicsCards getById(int id){
+        return  graphicsCardsRepository.getById(id);
     }
 }

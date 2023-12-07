@@ -1,5 +1,6 @@
 package com.example.coursework.service;
 
+import com.example.coursework.components.ComputerCases;
 import com.example.coursework.components.DataStorage;
 import com.example.coursework.components.GraphicsCards;
 import com.example.coursework.database.DataStorageRepository;
@@ -16,5 +17,9 @@ public class DataStorageService {
 
     public List<DataStorage> getAll(){
         return dataStorageRepository.getAll();
+    }
+
+    public DataStorage getById(int id){
+        return  dataStorageRepository.getById(id);
     }
 }

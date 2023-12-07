@@ -4,6 +4,7 @@ import com.example.coursework.components.ComputerCases;
 import com.example.coursework.components.DataStorage;
 import org.springframework.data.jdbc.repository.query.Query;
 import org.springframework.data.repository.CrudRepository;
+import org.springframework.data.repository.query.Param;
 import org.springframework.stereotype.Repository;
 
 import java.util.List;
@@ -12,4 +13,7 @@ import java.util.List;
 public interface ComputerCasesRepository extends CrudRepository<ComputerCases, Integer> {
     @Query("SELECT * FROM ComputerCases;")
     List<ComputerCases> getAll();
+
+    @Query("SELECT * FROM ComputerCases where id=:id;")
+    ComputerCases getById(@Param("id") int id);
 }
