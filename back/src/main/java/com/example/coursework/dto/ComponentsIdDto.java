@@ -8,9 +8,9 @@ import lombok.Setter;
 public class ComponentsIdDto {
     private Integer computerCasesId;
     private Integer dataStorageId;
+    private Integer graphicsCardsId;
     private Integer motherboardsId;
     private Integer powerSupplyId;
     private Integer processorsId;
     private Integer ramMemoryId;
-    private Integer graphicsCardsId;
 }
