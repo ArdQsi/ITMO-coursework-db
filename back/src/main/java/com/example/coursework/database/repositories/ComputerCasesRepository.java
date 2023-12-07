@@ -1,8 +1,7 @@
-package com.example.coursework.database;
+package com.example.coursework.database.repositories;
 
 import com.example.coursework.components.ComputerCases;
 import com.example.coursework.components.DataStorage;
-import com.example.coursework.components.GraphicsCards;
 import org.springframework.data.jdbc.repository.query.Query;
 import org.springframework.data.repository.CrudRepository;
 import org.springframework.data.repository.query.Param;
@@ -11,10 +10,10 @@ import org.springframework.stereotype.Repository;
 import java.util.List;
 
 @Repository
-public interface DataStorageRepository extends CrudRepository<DataStorage, Integer> {
-    @Query("SELECT * FROM DataStorage;")
-    List<DataStorage> getAll();
+public interface ComputerCasesRepository extends CrudRepository<ComputerCases, Integer> {
+    @Query("SELECT * FROM ComputerCases;")
+    List<ComputerCases> getAll();
 
-    @Query("SELECT * FROM DataStorage where id=:id;")
-    DataStorage getById(@Param("id") int id);
+    @Query("SELECT * FROM ComputerCases where id=:id;")
+    ComputerCases getById(@Param("id") int id);
 }

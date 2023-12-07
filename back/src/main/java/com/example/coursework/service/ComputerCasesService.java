@@ -1,7 +1,7 @@
 package com.example.coursework.service;
 
 import com.example.coursework.components.ComputerCases;
-import com.example.coursework.database.ComputerCasesRepository;
+import com.example.coursework.database.repositories.ComputerCasesRepository;
 import lombok.RequiredArgsConstructor;
 import org.springframework.stereotype.Service;
 

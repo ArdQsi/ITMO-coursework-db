@@ -1,10 +1,7 @@
 package com.example.coursework.service;
 
-import com.example.coursework.components.DataStorage;
 import com.example.coursework.components.GraphicsCards;
-import com.example.coursework.components.MotherBoards;
-import com.example.coursework.database.GraphicsCardsRepository;
-import com.example.coursework.database.MotherBoardsRepository;
+import com.example.coursework.database.repositories.GraphicsCardsRepository;
 import lombok.RequiredArgsConstructor;
 import org.springframework.stereotype.Service;
 

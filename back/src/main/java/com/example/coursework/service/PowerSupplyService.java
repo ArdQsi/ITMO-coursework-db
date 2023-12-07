@@ -1,10 +1,7 @@
 package com.example.coursework.service;
 
-import com.example.coursework.components.MotherBoards;
 import com.example.coursework.components.PowerSupply;
-import com.example.coursework.components.Processors;
-import com.example.coursework.database.PowerSupplyRepository;
-import com.example.coursework.database.ProcessorsRepository;
+import com.example.coursework.database.repositories.PowerSupplyRepository;
 import lombok.RequiredArgsConstructor;
 import org.springframework.stereotype.Service;
 

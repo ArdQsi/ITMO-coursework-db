@@ -1,10 +1,7 @@
 package com.example.coursework.сontrollers;
 
 import com.example.coursework.components.*;
-import com.example.coursework.database.ComputerCasesRepository;
-import com.example.coursework.database.Result;
 import com.example.coursework.dto.ManufacturerRequestDto;
-import com.example.coursework.dto.PriceRequestDto;
 import com.example.coursework.service.*;
 import lombok.RequiredArgsConstructor;
 import org.springframework.web.bind.annotation.*;

@@ -1,4 +1,4 @@
-package com.example.coursework.database;
+package com.example.coursework.database.repositories;
 
 import com.example.coursework.components.PowerSupply;
 import com.example.coursework.components.Processors;
