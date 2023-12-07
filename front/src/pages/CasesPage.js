@@ -2,6 +2,7 @@ import {useEffect, useState} from "react";
 import DataTable from "react-data-table-component";
 
 const CasesPage = () => {
+    const url = 'http://localhost:8080/computer-cases'
     const [price, setPrice] = useState('0');
     const [data, setData] = useState('');
 
@@ -10,7 +11,7 @@ const CasesPage = () => {
     };
 
     useEffect(() => {
-        fetch('http://localhost:8080/computer-cases', {
+        fetch(url, {
             method: 'GET',
             headers: {
                 'Content-type': 'application/json; charset=UTF-8',
@@ -26,7 +27,7 @@ const CasesPage = () => {
             "price": param
         }
 
-        fetch('http://localhost:8080/computer-cases', {
+        fetch(url, {
             method: 'POST',
             body: JSON.stringify(newPost),
             headers: {

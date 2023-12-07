@@ -2,6 +2,7 @@ import {useEffect, useState} from "react";
 import DataTable from "react-data-table-component";
 
 const DataStoragePage = () => {
+    const url = 'http://localhost:8080/data-storage'
     const [price, setPrice] = useState('0');
     const [data, setData] = useState('');
 
@@ -10,7 +11,7 @@ const DataStoragePage = () => {
     };
 
     useEffect(() => {
-        fetch('http://localhost:8080/data-storage', {
+        fetch(url, {
             method: 'GET',
             headers: {
                 'Content-type': 'application/json; charset=UTF-8',
@@ -26,7 +27,7 @@ const DataStoragePage = () => {
             "price": param
         }
 
-        fetch('http://localhost:8080/data-storage', {
+        fetch(url, {
             method: 'POST',
             body: JSON.stringify(newPost),
             headers: {

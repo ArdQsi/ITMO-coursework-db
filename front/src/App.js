@@ -8,6 +8,7 @@ import GraphicCardsPage from "./pages/GraphicCardsPage";
 import MotherBoardsPage from "./pages/MotherBoardsPage";
 import PowerSupplyPage from "./pages/PowerSupplyPage";
 import RamMemoryPage from "./pages/RamMemoryPage";
+import InfoPage from "./pages/InfoPage";
 
 
 
@@ -34,6 +35,8 @@ function App() {
                 <Route path="/powersupply" element={<PowerSupplyPage />}/>
                 <Route path="/processors" element={<ProcessorsPage />}/>
                 <Route path="/rammemory" element={<RamMemoryPage />}/>
+
+                <Route path="/info" element={<InfoPage />}/>
             </Routes>
         </>
 
