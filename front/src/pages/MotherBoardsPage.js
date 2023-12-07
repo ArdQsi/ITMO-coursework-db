@@ -48,16 +48,16 @@ const MotherBoardsPage = () => {
             selector: row => row.manufacturer
         },
         {
-            name: "formFactor",
-            selector: row => row.formFactor
+            name: "formfactor",
+            selector: row => row.formfactor
         },
         {
-            name: "ramSlots",
-            selector: row => row.ramSlots
+            name: "ramslots",
+            selector: row => row.ramslots
         },
         {
-            name: "motherInterface",
-            selector: row => row.motherInterface
+            name: "motherinterface",
+            selector: row => row.motherinterface
         },
         {
             name: "socket",

@@ -25,6 +25,7 @@ const MainPage = () => {
             })
                 .then((response) => response.json())
                 .then(response => setData(response))
+            .then(response => console.log(response))
     }
     const columns = [
         {
@@ -63,16 +64,19 @@ const MainPage = () => {
 
     return (
         <div>
-            <input
-                type="text"
-                id="price"
-                name="price"
-                onChange={handleChange}
-                value={price}
-            />
-            <button onClick={() => handleClick(price)}>send</button>
-            <DataTable columns={columns} data={data} fixedHeader pagination>
-            </DataTable>
+            <div style={{display: "flex"}}>
+                <input
+                    type="text"
+                    id="price"
+                    name="price"
+                    onChange={handleChange}
+                    value={price}
+                />
+                <button  onClick={() => handleClick(price)}>send</button>
+            </div>
+
+            {data ? <DataTable columns={columns} data={data} fixedHeader pagination>
+            </DataTable> : <h1>Укажите сумму, на которую вы хотите собрать компьютер!</h1>}
         </div>
     );
 };

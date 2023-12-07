@@ -52,8 +52,8 @@ const GraphicCardsPage = () => {
             selector: row => row.vram
         },
         {
-            name: "Graphinterface",
-            selector: row => row.Graphinterface
+            name: "graphinterface",
+            selector: row => row.graphinterface
         },
         {
             name: "powerconsumption",

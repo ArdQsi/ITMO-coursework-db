@@ -52,8 +52,8 @@ const RamMemoryPage = () => {
             selector: row => row.frequency
         },
         {
-            name: "ramType",
-            selector: row => row.ramType
+            name: "ramtype",
+            selector: row => row.ramtype
         },
         {
             name: "price",

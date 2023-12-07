@@ -30,3 +30,8 @@ header > a {
 header > a:hover {
   text-decoration: underline;
 }
+
+h1 {
+  text-align: center;
+  margin-top: 1000px;
+}

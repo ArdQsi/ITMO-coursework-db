@@ -52,8 +52,8 @@ const ProcessorsPage = () => {
             selector: row => row.cores
         },
         {
-            name: "clockSpeed",
-            selector: row => row.clockSpeed
+            name: "clockspeed",
+            selector: row => row.clockspeed
         },
         {
             name: "socket",
