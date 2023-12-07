@@ -1,7 +1,8 @@
 import {useEffect, useState} from "react";
 import DataTable from "react-data-table-component";
 
-const CasesPage = () => {
+const GraphicCardsPage = () => {
+    const url = 'http://localhost:8080/graphics-сards'
     const [price, setPrice] = useState('0');
     const [data, setData] = useState('');
 
@@ -10,7 +11,7 @@ const CasesPage = () => {
     };
 
     useEffect(() => {
-        fetch('http://localhost:8080/computer-cases', {
+        fetch(url, {
             method: 'GET',
             headers: {
                 'Content-type': 'application/json; charset=UTF-8',
@@ -26,7 +27,7 @@ const CasesPage = () => {
             "price": param
         }
 
-        fetch('http://localhost:8080/computer-cases', {
+        fetch(url, {
             method: 'POST',
             body: JSON.stringify(newPost),
             headers: {
@@ -35,7 +36,7 @@ const CasesPage = () => {
         })
             .then((response) => response.json())
             .then((response) => console.log(response))
-            // .then(response => setData(response))
+        // .then(response => setData(response))
     }
     const columns = [
         {
@@ -47,12 +48,16 @@ const CasesPage = () => {
             selector: row => row.manufacturer
         },
         {
-            name: "color",
-            selector: row => row.color
+            name: "vram",
+            selector: row => row.vram
         },
         {
-            name: "formfactor",
-            selector: row => row.formfactor
+            name: "Graphinterface",
+            selector: row => row.Graphinterface
+        },
+        {
+            name: "powerconsumption",
+            selector: row => row.powerconsumption
         },
         {
             name: "price",
@@ -76,4 +81,4 @@ const CasesPage = () => {
     );
 };
 
-export default CasesPage;
+export default GraphicCardsPage;

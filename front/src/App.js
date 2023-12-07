@@ -4,6 +4,10 @@ import MainPage from "./pages/MainPage";
 import ProcessorsPage from "./pages/ProcessorsPage";
 import CasesPage from "./pages/CasesPage";
 import DataStoragePage from "./pages/DataStoragePage";
+import GraphicCardsPage from "./pages/GraphicCardsPage";
+import MotherBoardsPage from "./pages/MotherBoardsPage";
+import PowerSupplyPage from "./pages/PowerSupplyPage";
+import RamMemoryPage from "./pages/RamMemoryPage";
 
 
 
@@ -25,6 +29,11 @@ function App() {
                 <Route path="/" element={<MainPage />}/>
                 <Route path="/cases" element={<CasesPage />}/>
                 <Route path="/datastorage" element={<DataStoragePage />}/>
+                <Route path="/graphicscards" element={<GraphicCardsPage />}/>
+                <Route path="/motherboards" element={<MotherBoardsPage />}/>
+                <Route path="/powersupply" element={<PowerSupplyPage />}/>
+                <Route path="/processors" element={<ProcessorsPage />}/>
+                <Route path="/rammemory" element={<RamMemoryPage />}/>
             </Routes>
         </>
 
