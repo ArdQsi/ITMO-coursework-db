@@ -10,8 +10,6 @@ import PowerSupplyPage from "./pages/PowerSupplyPage";
 import RamMemoryPage from "./pages/RamMemoryPage";
 import InfoPage from "./pages/InfoPage";
 
-
-
 function App() {
     return (
         <>
@@ -35,19 +33,9 @@ function App() {
                 <Route path="/powersupply" element={<PowerSupplyPage />}/>
                 <Route path="/processors" element={<ProcessorsPage />}/>
                 <Route path="/rammemory" element={<RamMemoryPage />}/>
-
                 <Route path="/info" element={<InfoPage />}/>
             </Routes>
         </>
-
-        // <div style={{padding: "50px 10%", backgroundColor: "gray"}}className="container mt-5">
-        //     <DataTable columns={columns} data={data} fixedHeader pagination>
-        //     </DataTable>
-        // </div>
-        // <div>
-        //     <MainTable />
-        //
-        // </div>
     );
 }
 

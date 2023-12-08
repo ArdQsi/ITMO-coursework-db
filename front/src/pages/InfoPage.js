@@ -14,7 +14,7 @@ const InfoPage = () => {
     console.log(useLocation())
     const location = useLocation();
     const state = location.state;
-    const url = 'http://localhost:8080/assembly'
+    const url = 'http://localhost:35941/assembly'
     const [data, setData] = useState('');
 
     useEffect(() => {
