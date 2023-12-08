@@ -2,7 +2,7 @@ import {useEffect, useState} from "react";
 import DataTable from "react-data-table-component";
 
 const DataStoragePage = () => {
-    const url = 'http://localhost:8080/data-storage'
+    const url = 'http://localhost:35941/data-storage'
     const [price, setPrice] = useState('0');
     const [data, setData] = useState('');
 

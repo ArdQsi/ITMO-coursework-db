@@ -11,7 +11,7 @@
 	<groupId>com.example</groupId>
 	<artifactId>coursework</artifactId>
 	<version>0.0.1-SNAPSHOT</version>
-	<packaging>war</packaging>
+	<packaging>jar</packaging>
 	<name>coursework</name>
 	<description>Demo project for Spring Boot</description>
 	<properties>
@@ -55,6 +55,8 @@
 			<artifactId>lombok</artifactId>
 		</dependency>
 	</dependencies>
+
+
 
 	<build>
 		<plugins>

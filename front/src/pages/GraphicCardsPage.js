@@ -2,7 +2,7 @@ import {useEffect, useState} from "react";
 import DataTable from "react-data-table-component";
 
 const GraphicCardsPage = () => {
-    const url = 'http://localhost:8080/graphics-сards'
+    const url = 'http://localhost:35941/graphics-сards'
     const [price, setPrice] = useState('0');
     const [data, setData] = useState('');
 

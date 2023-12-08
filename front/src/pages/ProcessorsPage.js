@@ -2,7 +2,7 @@ import {useEffect, useState} from "react";
 import DataTable from "react-data-table-component";
 
 const ProcessorsPage = () => {
-    const url = 'http://localhost:8080/processors'
+    const url = 'http://localhost:35941/processors'
     const [price, setPrice] = useState('0');
     const [data, setData] = useState('');
 

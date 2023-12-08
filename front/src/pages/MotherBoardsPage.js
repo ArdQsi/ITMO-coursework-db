@@ -2,7 +2,7 @@ import {useEffect, useState} from "react";
 import DataTable from "react-data-table-component";
 
 const MotherBoardsPage = () => {
-    const url = 'http://localhost:8080/mother-boards'
+    const url = 'http://localhost:35941/mother-boards'
     const [price, setPrice] = useState('0');
     const [data, setData] = useState('');
 

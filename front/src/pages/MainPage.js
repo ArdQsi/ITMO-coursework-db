@@ -19,7 +19,7 @@ const MainPage = () => {
             "price": param
         }
 
-        fetch('http://localhost:8080/main', {
+        fetch('http://localhost:35941/main', {
             method: 'POST',
             body: JSON.stringify(newPost),
             headers: {

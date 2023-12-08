@@ -2,7 +2,7 @@ import {useEffect, useState} from "react";
 import DataTable from "react-data-table-component";
 
 const PowerSupplyPage = () => {
-    const url = 'http://localhost:8080/power-supply'
+    const url = 'http://localhost:35941/power-supply'
     const [price, setPrice] = useState('0');
     const [data, setData] = useState('');
 
