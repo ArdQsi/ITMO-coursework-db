@@ -5,6 +5,7 @@ import com.example.coursework.database.PCAssembly;
 import com.example.coursework.dto.ComponentsIdDto;
 import com.example.coursework.dto.PriceRequestDto;
 import com.example.coursework.service.*;
+import jakarta.validation.Valid;
 import lombok.RequiredArgsConstructor;
 import org.springframework.web.bind.annotation.*;
 
@@ -24,7 +25,7 @@ public class AssemblyController {
     final private RamMemoryService ramMemoryService;
 
     @PostMapping("/assembly")
-    public PCAssembly getAssembly(@RequestBody ComponentsIdDto componentsId) {
+    public PCAssembly getAssembly(@Valid @RequestBody ComponentsIdDto componentsId) {
         System.out.println(componentsId.toString());
         ComputerCases computerCases = computerCasesService.getById(componentsId.getComputercasesid());
         DataStorage dataStorage = dataStorageService.getById(componentsId.getDatastorageid());
