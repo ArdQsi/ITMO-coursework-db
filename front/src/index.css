@@ -5,6 +5,10 @@ body {
     sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
+  width: auto;
+  height: auto;
+  margin: 0;
+  padding: 0;
 }
 
 code {
@@ -39,6 +43,7 @@ h1 {
 
 
 
+
 .table tbody {
   border-collapse: collapse;
 }
@@ -60,10 +65,9 @@ tr:hover td {
   color: #6699ff;
 }
 
-.container {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  height: 600px;
-}
+
+
+
+
+
 

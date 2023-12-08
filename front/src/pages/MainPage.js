@@ -1,25 +1,31 @@
-import DataTable from 'react-data-table-component';
-import {useState} from "react";
+import React, {useState, useMemo, useEffect} from "react";
 import {Link} from "react-router-dom";
-import InfoPage from "./InfoPage";
-
+import DataTable from "react-data-table-component";
 
 const MainPage = () => {
     const [price, setPrice] = useState('0');
     const [data, setData] = useState('');
+    const url = 'http://localhost:35941/main';
 
     const handleChange = (event) => {
         if (!isNaN(Number(event.target.value)))
             setPrice(event.target.value);
+
     };
+
+    useEffect(() => {
+        setRecords(data)
+    }, [data]);
 
 
     const handleClick = (param) => {
         const newPost = {
             "price": param
         }
+        setFilterText("")
 
-        fetch('http://localhost:35941/main', {
+
+        fetch(url, {
             method: 'POST',
             body: JSON.stringify(newPost),
             headers: {
@@ -31,7 +37,6 @@ const MainPage = () => {
             .then(response => setData(response))
             .catch(() => console.log('some error'));
     }
-
 
     const columns = [
         {
@@ -80,31 +85,56 @@ const MainPage = () => {
         }
     ]
 
+    function handleClear() {
+        setFilterText("")
+        setRecords(data)
+    }
+
+    const [records, setRecords] = useState(data)
+    const [filterText, setFilterText] = useState("")
+
+    function handleFilter(event) {
+        setFilterText(event.target.value)
+        if(data!=''){
+            const newData = data.filter(row => {
+                return row.computercases.toLowerCase().includes(event.target.value.toLowerCase()) ||
+                    row.datastorage.toLowerCase().includes(event.target.value.toLowerCase()) ||
+                    row.graphicscards.toLowerCase().includes(event.target.value.toLowerCase()) ||
+                    row.motherboards.toLowerCase().includes(event.target.value.toLowerCase()) ||
+                    row.powersupply.toLowerCase().includes(event.target.value.toLowerCase()) ||
+                    row.processors.toLowerCase().includes(event.target.value.toLowerCase()) ||
+                    row.ram_memory.toLowerCase().includes(event.target.value.toLowerCase())
+            })
+            setRecords(newData)
+        }
+    }
+
     return (
         <div>
-            <div style={{display: "flex"}}>
-
-                <input id="price"
-                       name="price"
-                       onChange={handleChange}
-                       value={price}
-                       className="form-control" type="text" placeholder="Default input"
-                       aria-label="default input example"/>
-                <button type="button" className="btn btn-secondary" onClick={() => handleClick(price)}>Собрать</button>
+            <div style={{display: "flex", alignItems: "flex-start", justifyContent: "space-between"}}>
+                <div>
+                    <input
+                        type="text"
+                        id="price"
+                        name="price"
+                        onChange={handleChange}
+                        value={price}/>
+                    <button onClick={() => handleClick(price)}>send</button>
+                </div>
+                <div>
+                    <input type="text" placeholder="Поиск..." value={filterText} onChange={handleFilter}/>
+                    <button onClick={handleClear}>X</button>
+                </div>
             </div>
-
-            {data ? (
-                <DataTable columns={columns} data={data} fixedHeader pagination />
-            ) : (
-                <>
-                    <h1>Укажите сумму, на которую вы хотите собрать компьютер!</h1>
-                    <div className="container">
-                    <img style={{textAlign: "center"}} src="https://media1.tenor.com/m/vNHwOmIronoAAAAC/sristy-cutie-putie-sristy.gif" alt="GIF" />
-                    </div>
-                </>
-            )}
+            <DataTable columns={columns}
+                       data={records}
+                       fixedHeader
+                       pagination
+            />
+            {data ? "" :<h1>Укажите сумму, на которую вы хотите собрать компьютер!</h1>}
         </div>
     );
+
 };
 
 export default MainPage;
