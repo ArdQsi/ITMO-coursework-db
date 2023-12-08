@@ -1,6 +1,8 @@
 package com.example.coursework.сontrollers;
 
 import com.example.coursework.components.*;
+import com.example.coursework.dto.ComponentsIdDto;
+import com.example.coursework.dto.ComputerCasesFilterDto;
 import com.example.coursework.dto.ManufacturerRequestDto;
 import com.example.coursework.service.*;
 import lombok.RequiredArgsConstructor;
@@ -26,6 +28,13 @@ public class ComponentsController {
         List<ComputerCases> list = computerCasesService.getAll();
         return list;
     }
+
+    @PostMapping("/computer-cases")
+    public List<ComputerCases> setFilterComputerCases(@RequestBody ComputerCasesFilterDto computerCasesFilterDto) {
+        List<ComputerCases> list = computerCasesService.setFilter(computerCasesFilterDto);
+        return list;
+    }
+
 
     @GetMapping("/data-storage")
     public List<DataStorage> getDataStorage() {

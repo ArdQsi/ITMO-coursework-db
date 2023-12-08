@@ -16,4 +16,11 @@ public interface ComputerCasesRepository extends CrudRepository<ComputerCases, I
 
     @Query("SELECT * FROM ComputerCases where id=:id;")
     ComputerCases getById(@Param("id") int id);
+
+    @Query("SELECT * FROM ComputerCases WHERE (:color is NULL or color = :color) AND " +
+            "(:formfactor is NULL or formfactor = :formfactor) AND" +
+            "(:minprice is NULL or price >= :minprice) AND" +
+            "(:maxprice is NULL or price <= :maxprice);")
+    List<ComputerCases> setFilter(@Param("color") String color, @Param("formfactor") String formfactor,
+                                  @Param("minprice") String minprice, @Param("maxprice") String maxprice);
 }

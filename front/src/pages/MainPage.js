@@ -83,14 +83,14 @@ const MainPage = () => {
     return (
         <div>
             <div style={{display: "flex"}}>
-                <input
-                    type="text"
-                    id="price"
-                    name="price"
-                    onChange={handleChange}
-                    value={price}
-                />
-                <button onClick={() => handleClick(price)}>send</button>
+
+                <input id="price"
+                       name="price"
+                       onChange={handleChange}
+                       value={price}
+                       className="form-control" type="text" placeholder="Default input"
+                       aria-label="default input example"/>
+                <button type="button" className="btn btn-secondary" onClick={() => handleClick(price)}>Собрать</button>
             </div>
 
             {data ? (
